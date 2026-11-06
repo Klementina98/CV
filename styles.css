@@ -1,0 +1,99 @@
+:root {
+  --bg: #fafafa;
+  --fg: #14161a;
+  --muted: #5b6270;
+  --card: #ffffff;
+  --line: #e4e6eb;
+  --accent: #6c4cf5;
+  --accent-fg: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --fg: #eceef2;
+    --muted: #9aa3b2;
+    --card: #171a21;
+    --line: #262b35;
+    --accent: #9b85ff;
+    --accent-fg: #0f1115;
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+
+.hero {
+  padding: 96px 0 64px;
+  background:
+    radial-gradient(900px 300px at 20% -10%, color-mix(in srgb, var(--accent) 28%, transparent), transparent),
+    var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.eyebrow { color: var(--accent); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin: 0; }
+h1 { font-size: clamp(2.4rem, 7vw, 4rem); line-height: 1.1; margin: .2em 0; }
+.lead { font-size: 1.2rem; color: var(--muted); max-width: 40em; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn {
+  padding: 10px 18px; border-radius: 10px; border: 1px solid var(--line);
+  color: var(--fg); text-decoration: none; background: var(--card); font-weight: 500;
+  transition: transform .15s ease, border-color .15s ease;
+}
+.btn:hover, .btn:focus-visible { transform: translateY(-2px); border-color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+
+section { padding: 48px 0 8px; }
+h2 { font-size: 1.5rem; margin: 0 0 20px; }
+h2::after { content: ""; display: block; width: 40px; height: 3px; background: var(--accent); margin-top: 8px; border-radius: 2px; }
+h3 { font-size: 1.05rem; margin: 0; }
+
+.cards { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.cards li { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 6px; }
+.cards strong { font-size: 1.5rem; color: var(--accent); }
+.cards span { color: var(--muted); font-size: .95rem; }
+
+.job { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin-bottom: 16px; }
+.job header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
+.when { color: var(--muted); font-size: .95rem; }
+.job ul { margin: 12px 0 0; padding-left: 20px; }
+.job p { margin: 8px 0 0; color: var(--muted); }
+
+.skills { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.skills div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+.skills p { margin: 6px 0 0; color: var(--muted); }
+
+footer { padding: 48px 16px; color: var(--muted); font-size: .9rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+
+@media print {
+  :root { --bg: #fff; --fg: #000; --muted: #333; --card: #fff; --line: #ccc; --accent: #000; }
+  body { font-size: 11pt; }
+  .hero { padding: 0 0 16px; background: none; }
+  .cta, footer { display: none; }
+  section { padding-top: 20px; break-inside: avoid; }
+}
+
+.talk-photo { margin: 16px 0 0; }
+.talk-photo img { display: block; width: 100%; max-width: 320px; height: auto; border-radius: 12px; border: 1px solid var(--line); }
+.talk-photo figcaption { margin-top: 8px; color: var(--muted); font-size: .9rem; }
+
+.job .role { display: flex; align-items: center; gap: 12px; }
+.job .logo { flex: none; display: grid; place-items: center; width: 72px; height: 40px; padding: 4px 6px; background: #fff; border: 1px solid var(--line); border-radius: 8px; }
+.job .logo img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+
+.hero-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 32px; }
+.hero-text { flex: 1 1 320px; min-width: 0; }
+.avatar { flex: none; width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); }
+@media print { .avatar { width: 96px; height: 96px; } }
+
+.app-icon { flex: none; width: 48px; height: 48px; border-radius: 12px; object-fit: cover; }
