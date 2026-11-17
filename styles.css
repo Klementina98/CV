@@ -97,3 +97,9 @@ footer { padding: 48px 16px; color: var(--muted); font-size: .9rem; }
 @media print { .avatar { width: 96px; height: 96px; } }
 
 .app-icon { flex: none; width: 48px; height: 48px; border-radius: 12px; object-fit: cover; }
+
+.shots { display: flex; flex-flow: row nowrap; gap: 10px; margin: 16px 0 0; padding: 0; }
+.shots figure { margin: 0; flex: 1 1 0; min-width: 0; max-width: 240px; }
+.shots img { display: block; width: 100%; height: auto; aspect-ratio: 720 / 1600; object-fit: cover; border: 1px solid var(--line); border-radius: 12px; }
+.shots figcaption { margin-top: 6px; font-size: 0.85rem; color: var(--muted); text-align: center; }
+@media (max-width: 480px) { .shots { gap: 8px; } .shots figcaption { font-size: 0.75rem; } }

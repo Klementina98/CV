@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://klementinakjamilov.com/">
   <meta property="og:url" content="https://klementinakjamilov.com/">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
   <header class="hero">
@@ -69,11 +69,17 @@
           <div class="role"><img class="app-icon" src="images/walletless-logo.png" alt="WalletLess app icon" width="48" height="48"><h3>WalletLess · All your cards. In one wallet.</h3></div>
           <span class="when"><a href="https://walletlessapp.com/">walletlessapp.com</a></span>
         </header>
+        <p>Designed, built, and published an Android app that replaces physical loyalty and shopping cards. Users scan a card's barcode or QR code once with the camera (CameraX and ML Kit), and the app redraws it at checkout (ZXing). Cards are sorted by the nearest store using device location. The app has a merchant catalogue synced from Firebase Realtime Database and supports English and Macedonian. It has 178+ installs on Google Play.</p>
         <ul>
-          <li>Android app that keeps every loyalty card in your phone. Cards work offline, and the one you need is always on top, sorted by your location.</li>
-          <li>Designed, built and published on Google Play (currently unlisted).</li>
-          <li>More of my work on <a href="https://github.com/Klementina98">GitHub</a>.</li>
+          <li>Built with a layered architecture (MVVM, Hilt DI, Room for on-device storage, Kotlin Coroutines/Flow).</li>
+          <li>Handled the full release cycle: signing, versioning, Play Console, and staged releases.</li>
+          <li>Designed, built and published on <a href="https://play.google.com/store/apps/details?id=com.walletless.walletlessApp&hl=en" rel="noopener">Google Play</a>.</li>
         </ul>
+        <div class="shots">
+          <figure><img src="images/dashboard.jpg?v=2" alt="WalletLess dashboard with an empty wallet prompt" loading="lazy"><figcaption>Empty Dashboard</figcaption></figure>
+          <figure><img src="images/cards.jpg?v=2" alt="WalletLess list of supported loyalty cards with search" loading="lazy"><figcaption>Loyalty Cards</figcaption></figure>
+          <figure><img src="images/barcode.jpg?v=2" alt="WalletLess card barcode shown for scanning at checkout" loading="lazy"><figcaption>Scanned Loyalty Cards</figcaption></figure>
+        </div>
       </article>
     </section>
 
